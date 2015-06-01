@@ -8,6 +8,9 @@ class collectdweb::params {
         'libregexp-common-perl', 'libconfig-general-perl' ]
       $collectdweb_dir = '/etc/collectd/collectdweb'
     }
+    'CentOS': {
+      $package = [ 'rrdtool' ]
+      $collectdweb_dir = '/var/lib/collectd/collectdweb'
     default: {
       fail("\"${module_name}\" is not supported on \"${::operatingsystem}\"")
     }
